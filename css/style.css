@@ -904,12 +904,214 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ══════════════════════════════════════
+   CV TABLE — invisible borders, structured
+   ══════════════════════════════════════ */
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.cv-table tr {
+  border-bottom: 1px solid rgba(0,200,160,0.06);
+}
+.cv-table tr:last-child { border-bottom: none; }
+.cv-table td, .cv-table th {
+  padding: 0.6rem 0.8rem;
+  vertical-align: top;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  border: none;
+}
+.cv-label {
+  width: 160px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+  padding-top: 0.65rem;
+  flex-shrink: 0;
+}
+.cv-value { color: var(--text-muted); }
+.cv-highlight {
+  color: var(--white);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.cv-table a { color: var(--accent); }
+.cv-table a:hover { text-decoration: underline; }
+
+/* ── EXPERIENCE BLOCKS ── */
+.exp-list { display: flex; flex-direction: column; gap: 0; }
+.exp-block {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.6rem;
+  transition: border-color 0.3s;
+}
+.exp-card:hover { border-color: rgba(0,200,160,0.35); }
+
+/* ── PROJECT BLOCKS ── */
+.proj-section-group { display: flex; flex-direction: column; gap: 1.2rem; }
+.proj-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-left: 2px solid var(--accent);
+  padding-left: 0.8rem;
+  margin-bottom: 0.3rem;
+  opacity: 0.85;
+}
+.proj-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), border-color 0.3s;
+}
+.proj-block.visible { opacity: 1; transform: translateY(0); }
+.proj-block:hover { border-color: rgba(0,200,160,0.4); transform: translateY(-4px); }
+.proj-tag-top {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+.proj-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  background: rgba(0,200,160,0.08);
+  border: 1px solid rgba(0,200,160,0.2);
+  color: var(--accent);
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+}
+
+/* ── EDUCATION FULL TABLE ── */
+.edu-table-wrap, .lang-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.edu-full-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.edu-full-table thead tr {
+  background: rgba(0,200,160,0.06);
+  border-bottom: 1px solid rgba(0,200,160,0.18);
+}
+.edu-full-table th {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: left;
+  font-weight: 400;
+  border: none;
+  white-space: nowrap;
+}
+.edu-full-table tbody tr {
+  border-bottom: 1px solid rgba(0,200,160,0.07);
+  transition: background 0.2s;
+}
+.edu-full-table tbody tr:last-child { border-bottom: none; }
+.edu-full-table tbody tr:hover { background: rgba(0,200,160,0.04); }
+.edu-full-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  vertical-align: middle;
+  border: none;
+}
+.edu-full-table td:first-child { color: var(--white); font-weight: 500; }
+
+/* Language badges */
+.lang-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+.lang-fluent {
+  background: rgba(0,200,160,0.12);
+  border-color: rgba(0,200,160,0.3);
+  color: var(--accent);
+}
+.lang-proficient {
+  background: rgba(240,192,96,0.1);
+  border-color: rgba(240,192,96,0.3);
+  color: var(--gold);
+}
+
+/* ── REFERENCES ── */
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.ref-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.4rem 1.4rem 1.2rem;
+  position: relative;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.ref-card:hover { border-color: rgba(0,200,160,0.4); transform: translateY(-4px); }
+.ref-num {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+}
+.ref-card .cv-table td { padding: 0.45rem 0.5rem; }
+.ref-card .cv-label { width: 90px; font-size: 0.63rem; }
+.ref-card .cv-highlight { font-size: 0.85rem; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .proj-grid { grid-template-columns: repeat(2, 1fr); }
-  .proj-card.featured { grid-column: span 2; }
-  .edu-grid { grid-template-columns: repeat(2, 1fr); }
+  .ref-grid { grid-template-columns: 1fr 1fr; }
   .hero-visual { display: none; }
   .hero-content { max-width: 100%; }
 }
@@ -919,19 +1121,19 @@ footer {
   .hamburger { display: flex; }
   #hero { padding: 100px 1.5rem 4rem; }
   .section { padding: 5rem 1.5rem; }
-  .proj-grid { grid-template-columns: 1fr; }
-  .proj-card.featured { grid-column: span 1; }
   .skills-layout { grid-template-columns: 1fr; gap: 1rem; }
   .research-skills { grid-template-columns: 1fr; }
-  .edu-grid { grid-template-columns: 1fr 1fr; }
   .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
   .contact-svg { display: none; }
   .hero-stats { gap: 1.5rem; }
   .about-card-cluster { grid-template-columns: 1fr; }
+  .ref-grid { grid-template-columns: 1fr; }
+  .exp-block { grid-template-columns: 28px 1fr; gap: 1rem; }
+  .cv-label { width: 110px; }
 }
 @media (max-width: 480px) {
-  .edu-grid { grid-template-columns: 1fr; }
   .hero-name { font-size: 2.8rem; }
   .section-title { font-size: 2rem; }
   .footer-inner { flex-direction: column; text-align: center; }
+  .cv-label { width: 90px; font-size: 0.6rem; }
 }
