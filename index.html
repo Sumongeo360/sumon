@@ -1,124 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md Sumon Ali | GIS Portfolio</title>
-
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Md Sumon Ali | GIS & Remote Sensing Professional</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <div class="hero-overlay">
+  <!-- ── CANVAS BACKGROUND ── -->
+  <canvas id="bgCanvas"></canvas>
 
-        <img src="profile.jpg" class="profile">
-
-        <h1>Md Sumon Ali</h1>
-        <p>GIS • Remote Sensing • Meteorology • Climate Data Analysis</p>
-
-        <a href="CV.pdf" download class="btn">Download CV</a>
-
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="nav-coords">23°46'N 88°29'E</span>
+      <span class="nav-name">Sumon Ali</span>
     </div>
-</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="CV.pdf" class="nav-cv-btn" download>↓ CV</a>
+    <button class="hamburger" id="hamburger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- NAV BUTTONS -->
-<div class="nav">
-    <button onclick="toggle('career')">Career</button>
-    <button onclick="toggle('experience')">Experience</button>
-    <button onclick="toggle('education')">Education</button>
-    <button onclick="toggle('skills')">Skills</button>
-    <button onclick="toggle('projects')">Projects</button>
-    <button onclick="toggle('research')">Research</button>
-    <button onclick="toggle('references')">References</button>
-</div>
+  <!-- ── MOBILE NAV ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMobile()">About</a></li>
+      <li><a href="#experience" onclick="closeMobile()">Experience</a></li>
+      <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+      <li><a href="#education" onclick="closeMobile()">Education</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+      <li><a href="CV.pdf" download>↓ Download CV</a></li>
+    </ul>
+  </div>
 
-<!-- CONTENT -->
-<div class="container">
-
-    <div id="career" class="card show">
-        <h2>Career Objective</h2>
-        <p>To work in GIS, Remote Sensing, and Climate Data Science where I can apply spatial analysis, automation, and modeling for real-world environmental solutions.</p>
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-scan-line"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">[ GIS · Remote Sensing · Climate Analytics ]</div>
+      <h1 class="hero-name">
+        <span class="hero-first">Md Sumon</span>
+        <span class="hero-last">Ali</span>
+      </h1>
+      <p class="hero-role">Meteorologist &amp; Geospatial Engineer</p>
+      <p class="hero-sub">Translating satellite data into actionable intelligence — from mouza maps to climate-resilient insurance models across Bangladesh.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-lbl">Years Experience</span></div>
+        <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-lbl">Major Projects</span></div>
+        <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-lbl">GIS Tools</span></div>
+      </div>
     </div>
+    <div class="hero-visual">
+      <div class="globe-ring r1"></div>
+      <div class="globe-ring r2"></div>
+      <div class="globe-ring r3"></div>
+      <div class="globe-center">
+        <img src="profile.jpg" alt="Md Sumon Ali" class="profile-img" onerror="this.style.display='none';document.querySelector('.globe-initials').style.display='flex'" />
+        <div class="globe-initials" style="display:none">MSA</div>
+      </div>
+      <div class="globe-dot" style="--a:20deg;--r:130px"></div>
+      <div class="globe-dot" style="--a:80deg;--r:110px"></div>
+      <div class="globe-dot" style="--a:150deg;--r:140px"></div>
+      <div class="globe-dot" style="--a:220deg;--r:120px"></div>
+      <div class="globe-dot" style="--a:300deg;--r:135px"></div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <div id="experience" class="card">
-        <h2>Professional Experience</h2>
+  <!-- ── ABOUT ── -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label">[ 01 — ABOUT ]</div>
+      <h2 class="section-title">Mapping the World,<br><em>One Layer at a Time</em></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a GIS professional and meteorologist based in Bangladesh, specializing in the intersection of <strong>geospatial technology, remote sensing, and climate science</strong>. Currently serving as a Meteorologist at Green Delta Insurance PLC, I develop climate-responsive insurance solutions for farmers in ecologically critical areas.</p>
+          <p>My work spans from high-resolution satellite image georeferencing and land-use mapping to Python-based automation and Google Earth Engine analytics. I hold an MS (Thesis) in Geography &amp; Environmental Studies from the University of Rajshahi with a 3.84 CGPA.</p>
+          <div class="about-quick">
+            <div class="quick-item"><span class="q-icon">📍</span><span>Dhaka &amp; Chapainawabganj, Bangladesh</span></div>
+            <div class="quick-item"><span class="q-icon">📧</span><a href="mailto:sumongeo360@gmail.com">sumongeo360@gmail.com</a></div>
+            <div class="quick-item"><span class="q-icon">📞</span><a href="tel:+8801706372485">+880 1706-372485</a></div>
+          </div>
+        </div>
+        <div class="about-card-cluster">
+          <div class="info-card">
+            <div class="ic-icon">🛰️</div>
+            <div class="ic-title">Remote Sensing</div>
+            <div class="ic-desc">Satellite image processing, classification, change detection &amp; environmental modeling</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">🗺️</div>
+            <div class="ic-title">GIS &amp; Cartography</div>
+            <div class="ic-desc">Spatial database management, geoprocessing automation, thematic mapping</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">🌦️</div>
+            <div class="ic-title">Climate Analytics</div>
+            <div class="ic-desc">ERA5 &amp; CHIRPS data, weather forecasting, climate risk assessment &amp; modeling</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">🐍</div>
+            <div class="ic-title">Python &amp; GEE</div>
+            <div class="ic-desc">Custom geospatial tools, automated workflows &amp; Earth Engine scripting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="timeline">
-            <div>
-                <h3>Meteorologist</h3>
-                <p>Green Delta Insurance PLC (2026–Present)</p>
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience" class="section section-dark">
+    <div class="container">
+      <div class="section-label">[ 02 — EXPERIENCE ]</div>
+      <h2 class="section-title">Professional<br><em>Journey</em></h2>
+      <div class="timeline">
+
+        <div class="tl-item active">
+          <div class="tl-line">
+            <div class="tl-dot"></div>
+            <div class="tl-connector"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-badge">Current</div>
+            <div class="tl-period">January 2026 – Present</div>
+            <h3 class="tl-role">Meteorologist</h3>
+            <div class="tl-company">Green Delta Insurance PLC <span class="tl-dept">· Impact Business</span></div>
+            <ul class="tl-list">
+              <li>Climate Data Analytics &amp; Weather Forecasting</li>
+              <li>Google Earth Engine (ERA5, CHIRPS analysis)</li>
+              <li>Python Programming for climate modeling</li>
+              <li>Climate risk assessment for agricultural insurance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-line">
+            <div class="tl-dot"></div>
+            <div class="tl-connector"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-period">December 2024 – December 2025</div>
+            <h3 class="tl-role">Assistant GIS Specialist</h3>
+            <div class="tl-company">Sheltech Consultants (Pvt.) Ltd. <span class="tl-dept">· GIS &amp; Remote Sensing</span></div>
+            <ul class="tl-list">
+              <li>Python scripting &amp; geospatial tools development</li>
+              <li>Geo-processing automation workflows</li>
+              <li>Geo-database management, quality checking &amp; verification</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-line">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-period">October 2023 – November 2024</div>
+            <h3 class="tl-role">Research Consultant</h3>
+            <div class="tl-company">CEGIS <span class="tl-dept">· Remote Sensing Department</span></div>
+            <ul class="tl-list">
+              <li>Satellite image processing &amp; geo-referencing</li>
+              <li>Automated workflows via Python-based scripts</li>
+              <li>Land use &amp; crop pattern mapping using Worldview-3 &amp; Sentinel imagery</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label">[ 03 — PROJECTS ]</div>
+      <h2 class="section-title">Field &amp;<br><em>Research Work</em></h2>
+      <div class="proj-grid">
+
+        <div class="proj-card featured">
+          <div class="proj-accent"></div>
+          <div class="proj-tag">Current · Climate Insurance</div>
+          <h3>NABAPALLAB Climate-Resilient Insurance</h3>
+          <p>Developing climate-responsive insurance solutions for farmers in Ecologically Critical Areas (ECAs) of Bangladesh under iDE Bangladesh's NABAPALLAB Programme. Encompasses risk assessment, FGD-based product design, and bundled finance-insurance models for agriculture, aquaculture &amp; WASH sectors.</p>
+          <div class="proj-meta">
+            <span>Green Delta Insurance PLC</span>
+            <span>2026 – Present</span>
+          </div>
+          <div class="proj-tags">
+            <span>GEE</span><span>ERA5</span><span>CHIRPS</span><span>Climate Risk</span><span>Insurance Design</span>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-accent"></div>
+          <div class="proj-tag">Government · Land Management</div>
+          <h3>Bangladesh Mouza Map Digitization QC</h3>
+          <p>Quality assurance of digitized Mouza map sheets across Bangladesh for the Ministry of Land. Covered edge matching, geo-referencing verification, and Python-automated QC workflows for thousands of cadastral sheets.</p>
+          <div class="proj-meta">
+            <span>Sheltech Consultants · MoL</span>
+            <span>2024 – 2025</span>
+          </div>
+          <div class="proj-tags">
+            <span>QGIS</span><span>ArcGIS Pro</span><span>Python</span><span>Geo-referencing</span>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-accent"></div>
+          <div class="proj-tag">Government · Land Zoning</div>
+          <h3>National Digital Land Zoning Map (CEGIS)</h3>
+          <p>Mauza and plot-based national land use maps using Worldview-3 and Sentinel imagery. Work included high-resolution georeferencing, GCP collection, road/waterbody delineation, and crop pattern determination across Bangladesh.</p>
+          <div class="proj-meta">
+            <span>CEGIS · Ministry of Land</span>
+            <span>Jan – Nov 2024</span>
+          </div>
+          <div class="proj-tags">
+            <span>Worldview-3</span><span>Sentinel</span><span>ERDAS</span><span>ENVI</span><span>Land Use</span>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-accent"></div>
+          <div class="proj-tag">Urban Planning · Drainage</div>
+          <h3>Chittagong City Water Logging Project</h3>
+          <p>Established structured drainage system design for Chattogram Development Authority (CDA). Delivered river-canal determination, drainage network modeling, and water flow direction analysis from field survey data.</p>
+          <div class="proj-meta">
+            <span>CEGIS · CDA</span>
+            <span>Oct – Dec 2023</span>
+          </div>
+          <div class="proj-tags">
+            <span>Drainage Modeling</span><span>Field Survey</span><span>GIS Analysis</span>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-accent"></div>
+          <div class="proj-tag">MS Thesis · Climate Science</div>
+          <h3>Heatwave Patterns &amp; Land Surface Temperature</h3>
+          <p>Assessed heatwave patterns driven by land cover changes and their impact on land surface temperature, comparing rural vs. urban settings across Bangladesh using ANN and CA–Markov spatio-temporal models.</p>
+          <div class="proj-meta">
+            <span>University of Rajshahi</span>
+            <span>2021 – 2023</span>
+          </div>
+          <div class="proj-tags">
+            <span>Remote Sensing</span><span>ANN</span><span>CA-Markov</span><span>LST</span>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-accent"></div>
+          <div class="proj-tag">BSc Project · River Erosion</div>
+          <h3>Riverbank Erosion Socio-Economic Impact</h3>
+          <p>Historical erosion and accretion analysis of the Padma River channel in Chapainawabganj Sadar Upazila, examining the socio-economic consequences for local communities through spatial and survey-based methods.</p>
+          <div class="proj-meta">
+            <span>University of Rajshahi</span>
+            <span>2020 – 2022</span>
+          </div>
+          <div class="proj-tags">
+            <span>Change Detection</span><span>Field Survey</span><span>Spatial Analysis</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="section section-dark">
+    <div class="container">
+      <div class="section-label">[ 04 — SKILLS ]</div>
+      <h2 class="section-title">Technical<br><em>Arsenal</em></h2>
+
+      <div class="skills-layout">
+        <div class="skills-col">
+          <div class="skill-group">
+            <div class="sg-header"><span class="sg-icon">🛰️</span> Remote Sensing</div>
+            <div class="skill-bar-list">
+              <div class="sb-item"><span>Satellite Image Processing</span><div class="sb-track"><div class="sb-fill" style="--w:95%"></div></div></div>
+              <div class="sb-item"><span>Image Classification &amp; Change Detection</span><div class="sb-track"><div class="sb-fill" style="--w:90%"></div></div></div>
+              <div class="sb-item"><span>Environmental &amp; LULC Modeling</span><div class="sb-track"><div class="sb-fill" style="--w:88%"></div></div></div>
+              <div class="sb-item"><span>ANN &amp; CA-Markov Simulation</span><div class="sb-track"><div class="sb-fill" style="--w:80%"></div></div></div>
             </div>
-
-            <div>
-                <h3>Assistant GIS Specialist</h3>
-                <p>Sheltech Consultants (2024–2025)</p>
+          </div>
+          <div class="skill-group">
+            <div class="sg-header"><span class="sg-icon">🗺️</span> GIS</div>
+            <div class="skill-bar-list">
+              <div class="sb-item"><span>Spatial Data Management &amp; Databases</span><div class="sb-track"><div class="sb-fill" style="--w:93%"></div></div></div>
+              <div class="sb-item"><span>Cartography &amp; Thematic Mapping</span><div class="sb-track"><div class="sb-fill" style="--w:92%"></div></div></div>
+              <div class="sb-item"><span>Advanced Geoprocessing</span><div class="sb-track"><div class="sb-fill" style="--w:90%"></div></div></div>
+              <div class="sb-item"><span>GIS Automation &amp; Tool Development</span><div class="sb-track"><div class="sb-fill" style="--w:85%"></div></div></div>
             </div>
-
-            <div>
-                <h3>Research Consultant</h3>
-                <p>CEGIS (2023–2024)</p>
+          </div>
+        </div>
+        <div class="skills-col">
+          <div class="skill-group">
+            <div class="sg-header"><span class="sg-icon">🌦️</span> Climate &amp; Data Science</div>
+            <div class="skill-bar-list">
+              <div class="sb-item"><span>Google Earth Engine</span><div class="sb-track"><div class="sb-fill" style="--w:88%"></div></div></div>
+              <div class="sb-item"><span>Python (Geospatial / Climate)</span><div class="sb-track"><div class="sb-fill" style="--w:87%"></div></div></div>
+              <div class="sb-item"><span>Climate Risk Assessment</span><div class="sb-track"><div class="sb-fill" style="--w:85%"></div></div></div>
+              <div class="sb-item"><span>Power BI / Looker Studio</span><div class="sb-track"><div class="sb-fill" style="--w:78%"></div></div></div>
             </div>
+          </div>
+          <div class="skill-group">
+            <div class="sg-header"><span class="sg-icon">🖥️</span> Software</div>
+            <div class="software-chips">
+              <span>ArcGIS</span><span>ArcGIS Pro</span><span>QGIS</span><span>ENVI</span>
+              <span>ERDAS IMAGINE</span><span>TerrSet</span><span>Google Earth Engine</span>
+              <span>Power BI</span><span>IBM SPSS</span><span>Minitab</span><span>Python</span>
+              <span>AutoCAD</span><span>MS Office</span>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div id="education" class="card">
-        <h2>Education</h2>
-        <ul>
-            <li>MS – Geography & Environmental Studies, University of Rajshahi (3.84)</li>
-            <li>BSc – Geography & Environmental Studies, University of Rajshahi (3.44)</li>
-            <li>HSC – Science (4.67)</li>
-            <li>SSC – Science (5.00)</li>
-        </ul>
+      <div class="research-skills">
+        <div class="rs-card"><div class="rs-icon">📋</div><div><strong>Survey Planning &amp; Coordination</strong><p>Field surveys, FGDs, KIIs, GCP collection &amp; RTK positioning</p></div></div>
+        <div class="rs-card"><div class="rs-icon">📊</div><div><strong>Data Analysis &amp; Reporting</strong><p>Statistical analysis, interpretation, technical report preparation</p></div></div>
+        <div class="rs-card"><div class="rs-icon">📐</div><div><strong>Technical &amp; Spatial Design</strong><p>CAD design, spatial layout planning, infographic production</p></div></div>
+      </div>
     </div>
+  </section>
 
-    <div id="skills" class="card">
-        <h2>Technical Skills</h2>
-        <div class="grid">
-            <div>GIS & Spatial Analysis</div>
-            <div>Remote Sensing</div>
-            <div>Python Automation</div>
-            <div>Google Earth Engine</div>
-            <div>Power BI</div>
-            <div>Survey & Field Data</div>
+  <!-- ── EDUCATION ── -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-label">[ 05 — EDUCATION ]</div>
+      <h2 class="section-title">Academic<br><em>Foundation</em></h2>
+      <div class="edu-grid">
+        <div class="edu-card grad">
+          <div class="edu-year">2021</div>
+          <div class="edu-degree">MS (Thesis)</div>
+          <div class="edu-subject">Geography &amp; Environmental Studies</div>
+          <div class="edu-institute">University of Rajshahi</div>
+          <div class="edu-gpa"><span class="gpa-badge">CGPA 3.84</span></div>
+          <div class="edu-note">Thesis: Heatwave Patterns &amp; LST due to Land Cover Changes</div>
         </div>
-    </div>
-
-    <div id="projects" class="card">
-        <h2>Professional Projects</h2>
-        <div class="project">
-            Climate-Resilient Insurance (NABAPALLAB)
+        <div class="edu-card">
+          <div class="edu-year">2020</div>
+          <div class="edu-degree">BSc (Honours)</div>
+          <div class="edu-subject">Geography &amp; Environmental Studies</div>
+          <div class="edu-institute">University of Rajshahi</div>
+          <div class="edu-gpa"><span class="gpa-badge">CGPA 3.44</span></div>
+          <div class="edu-note">4-year programme</div>
         </div>
-        <div class="project">
-            Digital Mouza Map Verification
+        <div class="edu-card">
+          <div class="edu-year">2016</div>
+          <div class="edu-degree">HSC</div>
+          <div class="edu-subject">Science</div>
+          <div class="edu-institute">Nawabganj Govt. College</div>
+          <div class="edu-gpa"><span class="gpa-badge">GPA 4.67</span></div>
+          <div class="edu-note">Higher Secondary</div>
         </div>
-        <div class="project">
-            Land Use Mapping (CEGIS)
+        <div class="edu-card">
+          <div class="edu-year">2014</div>
+          <div class="edu-degree">SSC</div>
+          <div class="edu-subject">Science</div>
+          <div class="edu-institute">Kholsi Bilateral High School</div>
+          <div class="edu-gpa"><span class="gpa-badge gpa-gold">GPA 5.00</span></div>
+          <div class="edu-note">Secondary School</div>
         </div>
-        <div class="project">
-            Chittagong Water Logging Project
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="section-label">[ 06 — CONTACT ]</div>
+      <h2 class="section-title">Let's<br><em>Connect</em></h2>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p class="contact-intro">Open to GIS, Remote Sensing, Climate Analytics, and research opportunities. Feel free to reach out!</p>
+          <div class="contact-links">
+            <a href="mailto:sumongeo360@gmail.com" class="contact-link">
+              <span class="cl-icon">✉</span>
+              <div><strong>Email</strong><span>sumongeo360@gmail.com</span></div>
+            </a>
+            <a href="tel:+8801706372485" class="contact-link">
+              <span class="cl-icon">📱</span>
+              <div><strong>Phone</strong><span>+880 1706-372485</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/md-sumon-ali-992b91214" target="_blank" class="contact-link">
+              <span class="cl-icon">in</span>
+              <div><strong>LinkedIn</strong><span>md-sumon-ali-992b91214</span></div>
+            </a>
+            <a href="https://sumongeo360.github.io/sumon/" target="_blank" class="contact-link">
+              <span class="cl-icon">⌨</span>
+              <div><strong>GitHub Portfolio</strong><span>sumongeo360.github.io/sumon</span></div>
+            </a>
+          </div>
         </div>
+        <div class="contact-map-decor">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" class="contact-svg">
+            <circle cx="150" cy="150" r="120" fill="none" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="4 6" opacity="0.4"/>
+            <circle cx="150" cy="150" r="90" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="150" cy="150" r="60" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.2"/>
+            <line x1="30" y1="150" x2="270" y2="150" stroke="var(--accent)" stroke-width="0.4" opacity="0.3"/>
+            <line x1="150" y1="30" x2="150" y2="270" stroke="var(--accent)" stroke-width="0.4" opacity="0.3"/>
+            <circle cx="150" cy="150" r="6" fill="var(--accent)" opacity="0.9"/>
+            <circle cx="150" cy="150" r="14" fill="none" stroke="var(--accent)" stroke-width="1.5" class="ping-ring"/>
+            <text x="158" y="140" font-size="9" fill="var(--accent)" opacity="0.8" font-family="Space Mono">23°46'N</text>
+            <text x="158" y="152" font-size="9" fill="var(--accent)" opacity="0.8" font-family="Space Mono">88°29'E</text>
+          </svg>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div id="research" class="card">
-        <h2>Research</h2>
-        <p><b>MS Thesis:</b> Heatwave & Land Surface Temperature (Urban vs Rural Bangladesh)</p>
-        <p><b>BSc Project:</b> Riverbank Erosion Impact Study</p>
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <span>© 2025 Md Sumon Ali · GIS &amp; Remote Sensing Professional</span>
+      <span class="footer-right">Built with precision, like every geospatial layer.</span>
     </div>
+  </footer>
 
-    <div id="references" class="card">
-        <h2>References</h2>
-
-        <p><b>Dr. Mizanoor Rahman</b><br>Thesis Supervisor</p>
-        <p><b>Dr. Md Shafiul Alam</b><br>Academic Teacher</p>
-        <p><b>Zihad Ahmed</b><br>Project Supervisor</p>
-
-    </div>
-
-</div>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
