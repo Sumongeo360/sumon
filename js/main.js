@@ -1,10 +1,8 @@
-function showSection(id) {
+function toggle(id) {
 
-    let sections = document.querySelectorAll(".section");
+    let cards = document.querySelectorAll(".card");
 
-    sections.forEach(sec => {
-        sec.classList.remove("active");
-    });
+    cards.forEach(c => c.classList.remove("show"));
 
-    document.getElementById(id).classList.add("active");
+    document.getElementById(id).classList.add("show");
 }
