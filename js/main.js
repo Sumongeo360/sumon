@@ -1,20 +1,10 @@
-// Simple enhancement script
+function showSection(id) {
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Portfolio loaded successfully");
+    let sections = document.querySelectorAll(".section");
 
-    // Smooth scroll effect (optional upgrade ready)
-    const sections = document.querySelectorAll(".section");
-
-    window.addEventListener("scroll", () => {
-        sections.forEach(sec => {
-            const top = window.scrollY;
-            const offset = sec.offsetTop - 400;
-
-            if (top > offset) {
-                sec.style.opacity = "1";
-                sec.style.transform = "translateY(0)";
-            }
-        });
+    sections.forEach(sec => {
+        sec.classList.remove("active");
     });
-});
+
+    document.getElementById(id).classList.add("active");
+}
