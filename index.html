@@ -3,115 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md Sumon Ali - Portfolio</title>
+<title>Md Sumon Ali | GIS Portfolio</title>
 
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-overlay">
+
+        <img src="profile.jpg" class="profile">
+
+        <h1>Md Sumon Ali</h1>
+        <p>GIS • Remote Sensing • Meteorology • Climate Data Analysis</p>
+
+        <a href="CV.pdf" download class="btn">Download CV</a>
+
+    </div>
+</div>
+
+<!-- NAV BUTTONS -->
+<div class="nav">
+    <button onclick="toggle('career')">Career</button>
+    <button onclick="toggle('experience')">Experience</button>
+    <button onclick="toggle('education')">Education</button>
+    <button onclick="toggle('skills')">Skills</button>
+    <button onclick="toggle('projects')">Projects</button>
+    <button onclick="toggle('research')">Research</button>
+    <button onclick="toggle('references')">References</button>
+</div>
+
+<!-- CONTENT -->
 <div class="container">
 
-    <!-- HEADER -->
-    <div class="header">
-        <img src="profile.jpg" alt="Profile Picture">
+    <div id="career" class="card show">
+        <h2>Career Objective</h2>
+        <p>To work in GIS, Remote Sensing, and Climate Data Science where I can apply spatial analysis, automation, and modeling for real-world environmental solutions.</p>
+    </div>
 
-        <div>
-            <h1>Md Sumon Ali</h1>
+    <div id="experience" class="card">
+        <h2>Professional Experience</h2>
 
-            <div class="contact">
-                📍 Bangladesh | Dhaka <br>
-                📧 sumongeo360@gmail.com <br>
-                📞 +8801706372485
+        <div class="timeline">
+            <div>
+                <h3>Meteorologist</h3>
+                <p>Green Delta Insurance PLC (2026–Present)</p>
             </div>
 
-            <a class="btn" href="CV.pdf" download>Download CV</a>
+            <div>
+                <h3>Assistant GIS Specialist</h3>
+                <p>Sheltech Consultants (2024–2025)</p>
+            </div>
+
+            <div>
+                <h3>Research Consultant</h3>
+                <p>CEGIS (2023–2024)</p>
+            </div>
         </div>
     </div>
 
-    <!-- MENU BUTTONS -->
-    <div class="menu">
-
-        <button onclick="showSection('career')">Career Objective</button>
-        <button onclick="showSection('experience')">Professional Experience</button>
-        <button onclick="showSection('education')">Education</button>
-        <button onclick="showSection('skills')">Technical Skills</button>
-        <button onclick="showSection('projects')">Projects</button>
-        <button onclick="showSection('research')">Research</button>
-        <button onclick="showSection('references')">References</button>
-
+    <div id="education" class="card">
+        <h2>Education</h2>
+        <ul>
+            <li>MS – Geography & Environmental Studies, University of Rajshahi (3.84)</li>
+            <li>BSc – Geography & Environmental Studies, University of Rajshahi (3.44)</li>
+            <li>HSC – Science (4.67)</li>
+            <li>SSC – Science (5.00)</li>
+        </ul>
     </div>
 
-    <!-- CONTENT BOX -->
-    <div class="content-box">
-
-        <!-- CAREER -->
-        <div id="career" class="section active">
-            <h2>Career Objective</h2>
-            <p>
-                GIS and Remote Sensing professional focused on spatial analysis, climate modeling,
-                and geospatial automation for real-world environmental applications.
-            </p>
+    <div id="skills" class="card">
+        <h2>Technical Skills</h2>
+        <div class="grid">
+            <div>GIS & Spatial Analysis</div>
+            <div>Remote Sensing</div>
+            <div>Python Automation</div>
+            <div>Google Earth Engine</div>
+            <div>Power BI</div>
+            <div>Survey & Field Data</div>
         </div>
+    </div>
 
-        <!-- EXPERIENCE -->
-        <div id="experience" class="section">
-            <h2>Professional Experience</h2>
-            <p><b>Meteorologist</b> – Green Delta Insurance PLC (2026–Present)</p>
-            <p><b>Assistant GIS Specialist</b> – Sheltech Consultants (2024–2025)</p>
-            <p><b>Research Consultant</b> – CEGIS (2023–2024)</p>
+    <div id="projects" class="card">
+        <h2>Professional Projects</h2>
+        <div class="project">
+            Climate-Resilient Insurance (NABAPALLAB)
         </div>
-
-        <!-- EDUCATION -->
-        <div id="education" class="section">
-            <h2>Education</h2>
-            <p>MS Geography & Environmental Studies – University of Rajshahi (3.84)</p>
-            <p>BSc Geography & Environmental Studies – University of Rajshahi (3.44)</p>
-            <p>HSC Science – Nawabganj Govt. College</p>
-            <p>SSC Science – Kholsi Bilateral High School</p>
+        <div class="project">
+            Digital Mouza Map Verification
         </div>
-
-        <!-- SKILLS -->
-        <div id="skills" class="section">
-            <h2>Technical Skills</h2>
-            <ul>
-                <li>GIS & Remote Sensing</li>
-                <li>Python Automation</li>
-                <li>Spatial Analysis</li>
-                <li>Power BI</li>
-            </ul>
+        <div class="project">
+            Land Use Mapping (CEGIS)
         </div>
-
-        <!-- PROJECTS -->
-        <div id="projects" class="section">
-            <h2>Professional Projects</h2>
-            <p>Climate-Resilient Insurance (NABAPALLAB)</p>
-            <p>Digital Mouza Map Verification</p>
-            <p>Land Use Mapping (CEGIS)</p>
-            <p>Chittagong Water Logging Project</p>
+        <div class="project">
+            Chittagong Water Logging Project
         </div>
+    </div>
 
-        <!-- RESEARCH -->
-        <div id="research" class="section">
-            <h2>Research Work</h2>
-            <p><b>MS Thesis:</b> Heatwave & Land Surface Temperature Analysis</p>
-            <p><b>BSc Project:</b> Riverbank Erosion Impact Study</p>
-        </div>
+    <div id="research" class="card">
+        <h2>Research</h2>
+        <p><b>MS Thesis:</b> Heatwave & Land Surface Temperature (Urban vs Rural Bangladesh)</p>
+        <p><b>BSc Project:</b> Riverbank Erosion Impact Study</p>
+    </div>
 
-        <!-- REFERENCES -->
-        <div id="references" class="section">
-            <h2>References</h2>
+    <div id="references" class="card">
+        <h2>References</h2>
 
-            <p><b>Dr. Mizanoor Rahman</b><br>
-            Thesis Supervisor</p>
-
-            <p><b>Dr. Md Shafiul Alam</b><br>
-            Academic Teacher</p>
-
-            <p><b>Zihad Ahmed</b><br>
-            Project Supervisor</p>
-
-        </div>
+        <p><b>Dr. Mizanoor Rahman</b><br>Thesis Supervisor</p>
+        <p><b>Dr. Md Shafiul Alam</b><br>Academic Teacher</p>
+        <p><b>Zihad Ahmed</b><br>Project Supervisor</p>
 
     </div>
 
