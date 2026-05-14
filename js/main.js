@@ -168,18 +168,18 @@ window.closeMobile = function() {
 })();
 
 
-/* ── PROJECT CARDS: stagger reveal ── */
+/* ── PROJECT BLOCKS: stagger reveal ── */
 (function initProjects() {
-  const cards = document.querySelectorAll('.proj-card');
+  const cards = document.querySelectorAll('.proj-block');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const index = Array.from(cards).indexOf(entry.target);
-        setTimeout(() => entry.target.classList.add('visible'), index * 100);
+        setTimeout(() => entry.target.classList.add('visible'), index * 80);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.05 });
   cards.forEach(el => observer.observe(el));
 })();
 
