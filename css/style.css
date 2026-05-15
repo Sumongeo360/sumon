@@ -4,41 +4,41 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  /* Background Colors */
-  --bg:         #fffafc;
-  --bg-alt:     #fff3f7;
-  --bg-card:    #ffffff;
-  --bg-card2:   #fff0f5;
 
-  /* Borders */
-  --border:     rgba(255, 182, 193, 0.25);
+  /* ═════════ BACKGROUND COLORS ═════════ */
+  --bg:         #ffffff;
+  --bg-alt:     #fff6f8;
+  --bg-card:    #fff0f4;
+  --bg-card2:   #ffe8ee;
 
-  /* Accent Colors */
-  --accent:      #ff8fab;   /* soft pink */
-  --accent2:     #ffc78f;   /* soft peach */
-  --accent-dim:  #d47b93;
+  /* ═════════ BORDER COLORS ═════════ */
+  --border:     rgba(255, 143, 171, 0.22);
 
-  /* Text Colors */
-  --text:        #3a2d35;
-  --text-muted:  #7d6874;
-  --text-dim:    #aa96a2;
+  /* ═════════ ACCENT COLORS ═════════ */
+  --accent:      #ff7aa2;
+  --accent2:     #ffb26b;
+  --accent-dim:  #cc6b89;
+
+  /* ═════════ TEXT COLORS ═════════ */
+  --text:        #2b1f28;
+  --text-muted:  #5f4b57;
+  --text-dim:    #907784;
+
+  /* Important for headings on white bg */
+  --white:       #241820;
 
   /* Extra */
-  --white:       #ffffff;
-  --gold:        #e9a93e;
+  --gold:        #d89b36;
 
-  /* Fonts */
+  /* ═════════ FONTS ═════════ */
   --font-head: 'Syne', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-body: 'DM Mono', monospace;
 
-  /* Animation */
+  /* ═════════ EFFECTS ═════════ */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Radius */
   --radius: 12px;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; font-size: 16px; }
