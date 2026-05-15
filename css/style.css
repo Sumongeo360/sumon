@@ -74,7 +74,7 @@ img { max-width: 100%; display: block; }
   gap: 2rem;
   padding: 0 2.5rem;
   height: 64px;
-  background: rgba(8,12,16,0.75);
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s var(--ease);
