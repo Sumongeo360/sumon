@@ -4,24 +4,30 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  --bg:        #080c10;
-  --bg-alt:    #0d1520;
-  --bg-card:   #101a25;
-  --bg-card2:  #0f1c2b;
-  --border:    rgba(0,200,160,0.15);
-  --accent:    #00c8a0;
-  --accent2:   #00e8c0;
-  --accent-dim:#006655;
-  --text:      #d8e8f0;
-  --text-muted:#6a8fa8;
-  --text-dim:  #3d5566;
-  --white:     #f0faff;
-  --gold:      #f0c060;
+  --bg:         #1b1722;
+  --bg-alt:     #241d2e;
+  --bg-card:    #2d2438;
+  --bg-card2:   #352944;
+
+  --border:     rgba(255, 182, 193, 0.18);
+
+  --accent:     #ffb6c1;
+  --accent2:    #ffd6a5;
+  --accent-dim: #c78da0;
+
+  --text:       #f8eef4;
+  --text-muted: #d7c1cf;
+  --text-dim:   #9d8897;
+
+  --white:      #fff8fb;
+  --gold:       #ffd27f;
+
   --font-head: 'Syne', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-body: 'DM Mono', monospace;
-  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
-  --radius:    12px;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 12px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
