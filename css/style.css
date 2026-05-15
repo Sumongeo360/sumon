@@ -4,29 +4,38 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  --bg:         #1b1722;
-  --bg-alt:     #241d2e;
-  --bg-card:    #2d2438;
-  --bg-card2:   #352944;
+  /* Background Colors */
+  --bg:         #fffafc;
+  --bg-alt:     #fff3f7;
+  --bg-card:    #ffffff;
+  --bg-card2:   #fff0f5;
 
-  --border:     rgba(255, 182, 193, 0.18);
+  /* Borders */
+  --border:     rgba(255, 182, 193, 0.25);
 
-  --accent:     #ffb6c1;
-  --accent2:    #ffd6a5;
-  --accent-dim: #c78da0;
+  /* Accent Colors */
+  --accent:      #ff8fab;   /* soft pink */
+  --accent2:     #ffc78f;   /* soft peach */
+  --accent-dim:  #d47b93;
 
-  --text:       #f8eef4;
-  --text-muted: #d7c1cf;
-  --text-dim:   #9d8897;
+  /* Text Colors */
+  --text:        #3a2d35;
+  --text-muted:  #7d6874;
+  --text-dim:    #aa96a2;
 
-  --white:      #fff8fb;
-  --gold:       #ffd27f;
+  /* Extra */
+  --white:       #ffffff;
+  --gold:        #e9a93e;
 
+  /* Fonts */
   --font-head: 'Syne', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-body: 'DM Mono', monospace;
 
+  /* Animation */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Radius */
   --radius: 12px;
 }
 
